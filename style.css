@@ -1,0 +1,98 @@
+body{
+    background-color: #a0c2aa;
+}
+input{
+    padding: 5px;
+}
+button{
+    padding: 5px;
+}
+
+.main-div{
+    background-color: #fafafa;
+    
+    width: 400px;
+   
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: 100px;
+   padding: 15px;
+   border-radius: 10px;
+}
+#title{
+color: #a0c2aa;
+text-align: center;
+margin-bottom: 20px;
+}
+#btn{
+    width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border: 1px solid #a0c2aa ;
+    border-radius: 5px;
+    color: rgb(1, 10, 1);
+    font-weight: bold;
+    cursor: pointer;
+}
+.main-div input{
+    width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border: 1px solid #a0c2aa ;
+    border-radius: 5px;
+   
+    
+}
+.main{
+    background-color: #fafafa;
+    
+   width: 400px;
+  
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+  padding: 15px;
+  border-radius: 10px;
+
+}
+
+ul{
+    list-style-type: none;
+}
+#nextbtn{
+    width: 300px;
+    background-color: burlywood;
+margin-left: auto;
+margin-right: auto;
+display: block;
+border-radius: 10px;
+border: none;
+padding: 5px;
+cursor: pointer;
+}
+#start{
+    width: 100px;
+    background-color: #1bb148;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+}
+.timer {
+    
+   width: fit-content;
+   padding: 0px;
+    
+}
+#min{
+  margin-left: 10px;
+}
+#result{
+    display: none;
+    width: 400px;
+    background-color: #fafafa;
+}
