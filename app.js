@@ -34,110 +34,113 @@ setInterval(function () {
 
 }, 60000)
 
-const questions = [{
-   'quest': 'CSS Stands for ',
-    'a': 'Cascading Style Sheet',
-    'b': 'Cascading Sheet Style',
-    'c': 'Copy Style Sheet',
-    'd': 'Copy Sheet Style',
-    'correct': 'a'
+const array = [
+    {
+        Question: 'JavaScript used for to ',
+        a: 'Provides functionality ',
+        b: 'For Styling webpages',
+        c: 'Give Structure ',
+        d: 'None of these',
+        correct: 'a'
+    },
+    {
+        Question: 'HTML used for to ',
+        a: 'Provides functionality ',
+        b: 'For Styling webpages',
+        c: 'Give Structure ',
+        d: 'None of these',
+        correct: 'c'
+    },
+    {
+        Question: 'CSS used  for ',
+        a: 'Provides functionality ',
+        b: 'For Styling webpages',
+        c: 'Give Structure ',
+        d: 'None of these',
+        correct: 'b'   
+    },
+    {
+        Question: 'CSS Stands for ',
+    a: 'Cascading Style Sheet',
+    b: 'Cascading Sheet Style',
+    c: 'Copy Style Sheet',
+    d: 'Copy Sheet Style',
+    correct: 'a'
+    },
+    {
+        Question: 'HTML Stands for ',
+        a: 'HyperTest Mark langauge',
+        b: 'HyperTest Machine Learning',
+        c: 'HyperText Markup langauge',
+        d: 'HyperText Mark langauge',
+        correct: 'c' 
+    },
+]
+let index = 0;
+let score = 0;
+let total = array.length;
+let quebox = document.getElementById("quebox");
+let options = document.querySelectorAll(".options");
 
-}, {
-    'quest': 'HTML Stands for ',
-    'a': 'HyperTest Mark langauge',
-    'b': 'HyperTest Machine Learning',
-    'c': 'HyperText Markup langauge',
-    'd': 'HyperText Mark langauge',
-    'correct': 'c'
-
-}, {
-    'quest': 'HTML used for to ',
-    'a': 'Provides functionality ',
-    'b': 'For Styling webpages',
-    'c': 'Give Structure ',
-    'd': 'None of these',
-    'correct': 'c'
-
-}, {
-    'quest': 'CSS used  for ',
-    'a': 'Provides functionality ',
-    'b': 'For Styling webpages',
-    'c': 'Give Structure ',
-    'd': 'None of these',
-    'correct': 'b'
-
-}, {
-    'quest': 'JavaScript used for to ',
-    'a': 'Provides functionality ',
-    'b': 'For Styling webpages',
-    'c': 'Give Structure ',
-    'd': 'None of these',
-    'correct': 'a'
-
-}]
-
-let index = 0
-let total = questions.length
-let right = 0,
-    wrong = 0;
-let getQuestion = document.getElementById('question')
-let getOptions = document.querySelectorAll('.options')
-const loadQuestion = () => {
+const loadFunction = () => {
     if (index === total) {
-        return endQuiz()
+        return endQuizz();
+
     }
-    reset()
-    const data = questions[index]
-    getQuestion.innerText = index + 1 + ')' + '' + data.quest
-    getOptions[0].nextElementSibling.innerText = data.a
-    getOptions[1].nextElementSibling.innerText = data.b
-    getOptions[2].nextElementSibling.innerText = data.c
-    getOptions[3].nextElementSibling.innerText = data.d
+
+    let data = array[index];
+    quebox.innerText = `${index + 1}) ${data.Question}`;
+    options[0].nextElementSibling.innerText = data.a;
+    options[1].nextElementSibling.innerText = data.b;
+    options[2].nextElementSibling.innerText = data.c;
+    options[3].nextElementSibling.innerText = data.d;
+    reset();
 }
-
-
-const submit = () => {
-    const data = questions[index.correct]
-    const ans = getAns()
-    if (ans == data) {
-        right++
+const submitQuizz = () => {
+    var ans = getAnswer();
+    let data = array[index];
+    if (ans === data.correct) {
+        score++;
+        console.log(score)
     }
     else {
-       wrong++
+        console.log("your answer is Wrong")
     }
-    index++
-    loadQuestion()
-
-    return;
+    index++;
+    loadFunction();
 }
-const getAns = () => {
-    let answer;
-    getOptions.forEach(
-        (input) => {
+
+
+const getAnswer = () => {
+    options.forEach((input) => {
         if (input.checked) {
-            answer=input.value
-            
+            value = input.value
         }
     })
-    return answer
+    return value
 }
+
 const reset = () => {
-    getOptions.forEach((input) => {
+    options.forEach((input) => {
         input.checked = false
     })
 }
-loadQuestion()
-const endQuiz = () => {
-    result()
-    let abc=`${right}/${total}`
-    console.log(abc)
+
+const endQuizz = () => {
+    var check = document.querySelector(".container2");
+    check.innerHTML =
+        `<div style = "text-align : center">
+    <h1 style=color:white> You have got ${score} out of ${total} </h1>
+    <h1 class = "abc">  Percentage  ${percentage(score, total)} </h1>
+    </div>`
+    check.classList.remove("container2")
+    check.classList.add("container3")
+    console.log(check.classList)
 }
-const result=()=>{
-    let val=3
-   if(right){
-    console.log('pass')
-   }
-   else{
-    console.log('fail')
-   }
+
+function percentage(score, total) {
+    return score * 100 / total + "%"
+    
 }
+
+loadFunction()

@@ -1,55 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Js Quiz</title>
+    <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+    <div class="body">
+        <div class="timer">
+            <ul ><span>Time:</span><span id="min">05</span></ul>
+        </div>
+        <div class="container2">
+          
+            <div class="question">
+                <h2 id="quebox">Q1</h2>
+            </div>
+            <div class="option">
+                <input type="radio" name="option" id="optiona" value="a" class="options">
+                <label for="optiona">Option 1</label>
+            </div>
+            <div class="option">
+                <input type="radio" name="option" id="optionb" value="b" class="options">
+                <label for="optionb">Option 2</label>
+            </div>
+            <div class="option">
+                <input type="radio" name="option" id="optionc" value="c" class="options">
+                <label for="optionc">Option 3</label>
+            </div>
+            <div class="option">
+                <input type="radio" name="option" id="optiond" value="d" class="options">
+                <label for="optiond">Option 4</label>
+            </div>
+            <button class="submit" onclick="submitQuizz()">Submit</button>
+        </div>
 
-    <div class="timer">
-        <ul ><span>Time:</span><span id="min">05</span></ul>
     </div>
-    <div class="main" id="questbox">
-
-        <ul id="ul">
-            <h2 id="question">Write question here</h2>
-            <li>
-                <input type="radio" name="option" id="opt1" class="options">
-                <label for="opt1">Option A</label>
-            </li>
-        </ul>
-        <ul>
-            <li>
-                <input type="radio" name="option" id="opt2"  class="options">
-                <label for="opt2">Option B</label>
-            </li>
-        </ul>
-       
-        <ul>
-            <li>
-                <input type="radio" name="option" id="opt3"  class="options">
-                <label for="opt3">Option C</label>
-            </li>
-        </ul>
-       
-        <ul>
-            <li>
-                <input type="radio" name="option" id="opt4"  class="options">
-                <label for="opt4" >Option D</label>
-            </li>
-        </ul>
-       
-       <button id="nextbtn" onclick="submit()">Submit</button>
-      
-    </div>
-
 
     <script src="app.js"></script>
 </body>
-
 </html>
